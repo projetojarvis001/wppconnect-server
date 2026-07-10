@@ -1,10 +1,11 @@
 import { ServerOptions } from './types/ServerOptions';
 
 export default {
-  secretKey: 'THISISMYSECURETOKEN',
+  secretKey: process.env.WPP_SECRET_KEY || 'THISISMYSECURETOKEN',
   host: 'http://localhost',
-  port: '21465',
+  port: '8082',
   deviceName: 'WppConnect',
+  autoClose: 120000, // 2 minutos para escanear QR
   poweredBy: 'WPPConnect-Server',
   startAllSession: true,
   tokenStoreType: 'file',

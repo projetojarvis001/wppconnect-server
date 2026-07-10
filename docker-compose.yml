@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 services:
   wppconnect:
@@ -10,7 +10,9 @@ services:
       - ./config.ts:/usr/src/wpp-server/config.ts
       - ./wppconnect_tokens:/usr/src/wpp-server/tokens
     ports:
-      - "21465:21465"
+      - '8082:8082'
+    environment:
+      - WPP_SECRET_KEY=${WPP_SECRET_KEY}
 
 volumes:
-  wppconnect_tokens: {}      
+  wppconnect_tokens: {}
